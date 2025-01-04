@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying posts in the blog grid
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -9,55 +9,42 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-card' ); ?>>
+	<div class="post-thumbnail">
+		<a href="<?php the_permalink(); ?>">
+			<?php 
+			if ( has_post_thumbnail() ) : ?>
+				<?php the_post_thumbnail( 'large' ); ?>
+			<?php else : ?>
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/default-image.png' ); ?>" 
+					alt="<?php echo esc_attr( get_the_title() ); ?>" 
+					class="default-featured-image" />
+			<?php endif; ?>
+		</a>
+	</div>
 
-		if ( 'post' === get_post_type() ) :
+    <div class="post-content">
+        <div class="entry-header">
+            <h2 class="entry-title">
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </h2>
+		</div>
+        <div class="entry-meta">
+			<?php
+			printf(
+				'<div class="author-avatar">%s</div>',
+				get_avatar( get_the_author_meta( 'ID' ), 40 )
+			);
 			?>
-			<div class="entry-meta">
-				<?php
-				nolimitbuzz_posted_on();
-				nolimitbuzz_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+			<span class="author-name">
+				<?php the_author(); ?>
+			</span>
+		</div>
 
-	<?php nolimitbuzz_post_thumbnail(); ?>
+        <div class="entry-excerpt">
+            <?php the_excerpt(); ?>
+        </div>
 
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'nolimitbuzz' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
+    </div>
+</article>
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nolimitbuzz' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php nolimitbuzz_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
