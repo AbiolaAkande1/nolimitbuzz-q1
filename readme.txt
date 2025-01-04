@@ -1,39 +1,31 @@
-=== nolimitbuzz-wp ===
-
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-Requires at least: 4.5
-Tested up to: 5.4
-Requires PHP: 5.6
-Stable tag: 1.0.0
+// readme.txt
+=== Nolimibuzz Q1 ===
+Contributors: Abiola Akande
+Requires at least: WordPress 5.9
+Tested up to: WordPress 6.4
+Requires PHP: 7.4
 License: GNU General Public License v2 or later
-License URI: LICENSE
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme called nolimitbuzz-wp.
+A modern, minimalist WordPress theme designed for blogs.
 
 == Description ==
+Nolimibuzz Q1 is a clean and modern WordPress theme perfect for blogs. It features a responsive grid layout, beautiful typography, and optimized reading experience.
 
-Answer to Nolimitbuzz assessment
+== Features ==
+* Responsive design
+* Clean typography
+* Featured images support
+* Custom navigation menu
+* Social media integration
+* SEO optimized
+* Fast loading
 
 == Installation ==
-
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
-
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
-
-nolimitbuzz-wp includes support for WooCommerce and for Infinite Scroll in Jetpack.
+1. Upload the theme files to wp-content/themes directory
+2. Activate the theme through the WordPress admin panel
+3. Configure theme options in Customize panel
 
 == Changelog ==
-
-= 1.0 - May 12 2015 =
+= 1.0.0 =
 * Initial release
-
-== Credits ==
-
-* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
