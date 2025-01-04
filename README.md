@@ -47,8 +47,8 @@ nolimibuzz-q1/
    - LinkedIn Profile
    - Profile Picture
 
-## Theme Development
+## Credit
 
 Built by: Abiola Akande
 Version: 1.0.0
-Requires WordPress: 6.0+
+Requires WordPress: 5.0 or higher
